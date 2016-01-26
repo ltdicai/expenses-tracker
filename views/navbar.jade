@@ -1,0 +1,21 @@
+nav.navbar.navbar-default
+  .container
+    div.navbar-header
+      a(href='/', class='navbar-brand') Expenses Tracker
+    div.navbar-collapse
+      //- ul.nav.navbar-nav
+      //-   li 
+      //-     a(href='/dashboard') Dashboard
+      ul.nav.navbar-nav.navbar-right
+        if user
+          li 
+            p.navbar-text Signed in as #{user.username}
+          li
+            div.navbar-btn
+              a(href='/logout')
+                button.btn.btn-primary(type="button") Logout
+        else
+          li
+            div.navbar-btn
+              a(href='/login')
+                button.btn.btn-primary(type="button") Login

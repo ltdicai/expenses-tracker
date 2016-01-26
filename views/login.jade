@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div(class='container')
+    form(method='POST')
+      .form-group
+        label(for='username') Username
+        input(type='text', class='form-control', name='username', placeholder='Username')
+      .form-group
+        label(for='password') Password
+        input(type='password', class='form-control', name='password', placeholder='Password')
+      .input
+      button(class='btn btn-success') Sign in
+    a(href="/signup")
+      button(class='btn btn-primary') Don't have account? Sign up

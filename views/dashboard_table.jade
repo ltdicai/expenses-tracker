@@ -1,0 +1,26 @@
+if entries.length
+  table.table-striped
+    thead
+      th Datetime
+      th Description
+      th Amount
+      th Comment
+      th Actions
+    tbody
+      each entry in entries
+        tr
+          td= dateFormat(entry.datetime, "dd/mm/yyyy@HH:MM")
+          td= entry.description
+          td= "$" + entry.amount.toFixed(2)
+          td= entry.comment
+          td
+            .btn-group
+              button.btn.btn-primary.dropdown-toggle(data-toggle='dropdown') Actions&nbsp;
+                span.caret
+              ul.dropdown-menu
+                li 
+                  a(href="/entry?eid=#{entry._id}") Edit
+                li 
+                  a(href="/delete_entry?eid=#{entry._id}") Delete
+else
+  p There are not any entries

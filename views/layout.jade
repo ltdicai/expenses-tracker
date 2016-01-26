@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    block module_css
+  body
+    include ./navbar.jade
+    block content
+  script(src='//code.jquery.com/jquery-1.12.0.min.js')
+  script(type='text/javascript' src='/javascripts/bootstrap.min.js')
+  block module_js
