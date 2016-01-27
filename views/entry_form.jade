@@ -1,0 +1,35 @@
+h2= (entry?"Edit":"Add") + " entry"
+div
+  .form-group
+    label(for='date') Date
+    input(id="date", type='date', class='form-control', 
+      name='date', placeholder='Date', 
+      value=entry?dateFormat(entry.datetime, "dd/mm/yyyy"):""
+    )
+  .form-group
+    label(for='time') Time
+    input(type='time', class='form-control', 
+      name='time', placeholder='hh:mm (optional)',
+      value=entry?dateFormat(entry.datetime, "HH:MM"):""
+    )
+  .form-group
+    label(for='description') Description
+    input(type='text', class='form-control', 
+      name='description',placeholder='Description',
+      value=entry?entry.description:""
+    )
+  .form-group
+    label(for='amount') Amount
+    input(type='number', class='form-control',
+      name='amount', step=0.01, placeholder='Amount',
+      value=entry?entry.amount:""
+    )
+  .form-group
+    label(for='comment') Comment
+    input(type='text', class='form-control', 
+      name='comment', placeholder='Comment',
+      value=entry?entry.comment:""
+    )
+  button#updateentry(class='btn btn-success', data-eid='#{entry?entry._id:""}')= entry?"Save":"Add"
+  script
+    $('#date').datepicker({format: "dd/mm/yyyy"});

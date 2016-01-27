@@ -1,0 +1,14 @@
+if entries.length
+  table.table-striped
+    thead
+      th Week
+      th Total
+      th Average
+    tbody
+      each entry in entries
+        tr
+          td= entry._id
+          td= entry.value.amount
+          td= entry.value.avg
+else
+  p There are not any entries

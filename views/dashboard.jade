@@ -3,8 +3,29 @@ extends layout
 block content
   .container.main
     .row.buttons
-      a(href='/entry')
+      a#addentry(href='/entry')
         button.btn.btn-success Add entry
-    include ./dashboard_table.jade
+      a#summary(href='/summary')
+        button.btn.btn-success Summary
+      a#showall(href='/showall')
+        button.btn.btn-success Show all
+      .filter.form-inline
+        .form-group
+          label(for='date_from') From
+          input(id="date_from", type='date', class='form-control', 
+            name='date', placeholder='From'
+          )
+        .form-group
+          label(for='date_to') To
+          input(id="date_to", type='date', class='form-control', 
+            name='date', placeholder='To'
+          )
+        button#applyfilter(class='btn btn-success') Apply
+    #content.row
+      include ./dashboard_table.jade
+
+block module_js
+  script
+    include ./dashboard.js
 
 

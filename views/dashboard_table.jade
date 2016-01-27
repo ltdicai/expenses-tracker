@@ -19,8 +19,8 @@ if entries.length
                 span.caret
               ul.dropdown-menu
                 li 
-                  a(href="/entry?eid=#{entry._id}") Edit
+                  a.editentry(data-eid='#{entry._id}', href="/entry?eid=#{entry._id}") Edit
                 li 
-                  a(href="/delete_entry?eid=#{entry._id}") Delete
+                  a.deleteentry(data-eid='#{entry._id}', href="/delete_entry?eid=#{entry._id}") Delete
 else
   p There are not any entries

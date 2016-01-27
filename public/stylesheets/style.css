@@ -14,3 +14,7 @@ div.main{
 div.main table{
   width: 100%;
 }
+
+div#content {
+  width: 80%;
+}
