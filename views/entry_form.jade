@@ -31,5 +31,4 @@ div
       value=entry?entry.comment:""
     )
   button#updateentry(class='btn btn-success', data-eid='#{entry?entry._id:""}')= entry?"Save":"Add"
-  script
-    $('#date').datepicker({format: "dd/mm/yyyy"});
+  script $('#date').datepicker({format: "dd/mm/yyyy"});
